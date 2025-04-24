@@ -1,0 +1,35 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\vinyltracker_3-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	artists[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\artists[0m
+[0m[[0m[0mdebug[0m] [0m[0m	artists\Artist.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\artists\Artist.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	artists\Artist.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\artists\Artist.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	genres[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\genres[0m
+[0m[[0m[0mdebug[0m] [0m[0m	genres\Genre.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\genres\Genre.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	genres\Genre.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\genres\Genre.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\main$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\main$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\main$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	vinyls[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\vinyls[0m
+[0m[[0m[0mdebug[0m] [0m[0m	vinyls\Vinyl.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\vinyls\Vinyl.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	vinyls\Vinyl.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\vinyls\Vinyl.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	vinyls\Vinyls.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\vinyls\Vinyls.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	vinyls\Vinyls.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes\vinyls\Vinyls.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

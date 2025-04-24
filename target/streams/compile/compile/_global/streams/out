@@ -1,6 +1,14 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E171] Type Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\main.scala:14:10 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m14 |[0m  [33mvar[0m [36mv[0m = [33mnew[0m [35mVinyl[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m          ^^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0mmissing argument for parameter vinylName of [33mconstructor[0m [35mVinyl[0m in [33mclass[0m [35mVinyl[0m: (vinylName: String, vinylType: String, musicType: String, releaseDate: String,[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m  condition: String, price: Float): vinyls.Vinyl[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:39:39 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m39 |[0m            [33mvar[0m [36mprice[0m: [35mFloat[0m = readLine()[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                               ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                               Found:    String[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                               Required: Float[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E171] Type Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:43:25 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m43 |[0m            [33mvar[0m [36mv[0m = Vinyl()[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                    ^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0mmissing argument for parameter vinylId of [33mmethod[0m [35mapply[0m in [33mobject[0m [35mVinyl[0m: (vinylId: Int, vinylName: String, vinylType: String, musicType: String,[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m  releaseDate: String, condition: String, price: Float, artistsIDs: List[Int],[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m  genreIDs: List[Int]): vinyls.Vinyl[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
