@@ -1,14 +1,9 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:39:39 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m39 |[0m            [33mvar[0m [36mprice[0m: [35mFloat[0m = readLine()[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                               ^^^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                               Found:    String[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                               Required: Float[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E171] Type Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:43:25 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m43 |[0m            [33mvar[0m [36mv[0m = Vinyl()[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                    ^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0mmissing argument for parameter vinylId of [33mmethod[0m [35mapply[0m in [33mobject[0m [35mVinyl[0m: (vinylId: Int, vinylName: String, vinylType: String, musicType: String,[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m  releaseDate: String, condition: String, price: Float, artistsIDs: List[Int],[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m  genreIDs: List[Int]): vinyls.Vinyl[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\main.scala:23:49 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m23 |[0m    print(System.getProperty([31m"user.dir"[0m) + [31m".src\main\scala\resources"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                 ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                                invalid escape character[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\main.scala:23:54 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m23 |[0m    print(System.getProperty([31m"user.dir"[0m) + [31m".src\main\scala\resources"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                      ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                                invalid escape character[0m
 [0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

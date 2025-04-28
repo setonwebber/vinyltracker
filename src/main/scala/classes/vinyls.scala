@@ -1,10 +1,11 @@
 import scala.io.StdIn.readLine
-import scala.compiletime.uninitialized
+
+import functions.*
 
 package vinyls{
 
     case class Vinyl(
-        val vinylId: Int,
+        val vinylID: Int,
         var vinylName: String,
         var vinylType: String,
         var releaseDate: String,
@@ -18,28 +19,85 @@ package vinyls{
         var vinyls: List[Vinyl] = List()
 
         def menu(): Unit = {
-            println("1. View Vinyls" +
-            "\n2. Artists" +
-            "\n3. Genres" +
-            "\n4. Exit")
+            var running = true
+            while(running){
+                var response = null
+                println(
+                    "\n1. View Vinyls" +
+                    "\n2. Search Vinyls" +
+                    "\n3. Add Vinyl" +
+                    "\n4. Edit Vinyl" +
+                    "\n5. Remove Vinyl" +
+                    "\n6. Back")
+
+                readLine("> ") match {
+                    case "1" => displayVinyls()
+                    case "2" => displayVinyls(/* search criteriria functionality*/ )
+                    case "3" => addVinyl()
+                    case "4" => editVinyl()
+                    case "5" => removeVinyl()
+                    case "6" => running = false
+                    case _ => println("Invalid")
+                }
+            }
+
         }
 
-        def displayVinyls(searchCriteria: String = uninitialized): Unit = {
+        def displayVinyls(searchCriteria: Option[String] = None): Unit = {
             
         }
 
         def addVinyl(): Unit = {
-            var vinylId: Int = vinyls.length + 1
-            var vinylName: String = readLine("Vinyl Name: ")
-            var vinylType: String = readLine("Vinyl Type (EP, LP, Single, other): ")
-            var releaseDate: String = readLine("Release Date: ")
-            var condition: String = readLine("Vinyl Name: ")
-            var price: Float = readLine("Vinyl Name: ")
-            var artistsID: List[Int] = List()
-            // loop as many times as the user wants, search each artist in the artists list, if artist id is returned, add to artistsID list, if not, addArtist with details.
-            var genreIDs: List[Int] = List()
-            var v = Vinyl()
+            val vinylID: Int = vinyls.length + 1
+
+            val vinylName = askUntilValid("Vinyl Name: ") { input =>
+                if (input.nonEmpty) 
+                    Some(input) 
+                else 
+                    None
+            }
+
+            val vinylType = askUntilValid("Vinyl Type (EP, LP, Single, other): ") { input =>
+                val allowedTypes = Set("EP", "LP", "Single", "Other")
+
+                if (allowedTypes.contains(input.capitalize)) 
+                    Some(input.capitalize) 
+                else 
+                    None
+            }
+
+            val releaseDate = askUntilValid("Release Date (YYYY-MM-DD): ") { input =>
+                if (input.matches("\\d{4}-\\d{2}-\\d{2}")) 
+                    Some(input) 
+                else 
+                    None
+            }
+
+            val condition = askUntilValid("Condition (New, Good, Worn, etc.): ") { input =>
+                if (input.nonEmpty) 
+                    Some(input) 
+                else 
+                    None
+            }
+
+            val price = askUntilValid("Price: ") { input =>
+                try 
+                    Some(input.toFloat) 
+                catch 
+                    { case _: NumberFormatException => None }
+            }
+
+            // We'll handle artistsIDs and genreIDs later, for now leave empty
+            val artistsIDs: List[Int] = List()
+            val genreIDs: List[Int] = List()
+
+            val newVinyl = Vinyl(vinylID, vinylName, vinylType, releaseDate, condition, price, artistsIDs, genreIDs)
+            vinyls = vinyls :+ newVinyl
+
+            println(s"Added new vinyl: $newVinyl")
+            saveVinyls()
         }
+
 
         def editVinyl(): Unit = {
             // edit vinyl from vinyls
@@ -53,8 +111,13 @@ package vinyls{
             // save vinyls to file
         }
 
-        def loadVinyls(): Unit = {
-            // load vinyls from file, if empty, create file
+        def loadVinyls(path: os.Path): Unit = {
+            var content: String = os.read(path + "vinyls.txt")
+            if content:
+                
+            else:
+                os.write(path + "vinyls.txt", "")
+
         }
     }
 }

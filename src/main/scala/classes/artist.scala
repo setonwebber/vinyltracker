@@ -1,5 +1,4 @@
 import scala.io.StdIn.readLine
-import scala.compiletime.uninitialized
 
 package artists{
 
@@ -39,17 +38,19 @@ package artists{
             // save Artists to file
         }
 
-        def loadArtists(): Unit = {
+        def loadArtists(path: os.Path): Unit = {
             // load Artists from file, if empty, create file
         }
 
-        def findArtistID(name: String): Unit = {
-            var artistID: Int = uninitialized
-            artists.foreach { artist =>
-                
-                if name == artist.artistName then artistID = artist.artistID
-            }
-            return artistID
+        def findArtistID(name: String): Option[Int] = {
+            artists.find(_.artistName == name).map(_.artistID)
+            // var artistID: Option[Int] = None
+            // artists.foreach { artist =>
+            //     if (name == artist.artistName) {
+            //         artistID = Some(artist.artistID)
+            //     }
+            // }
+            // artistID
         }
     }
 }

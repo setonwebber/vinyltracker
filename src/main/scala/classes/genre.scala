@@ -1,5 +1,4 @@
 import scala.io.StdIn.readLine
-import scala.compiletime.uninitialized
 
 package genres{
 
@@ -38,16 +37,12 @@ package genres{
             // save vinyls to file
         }
 
-        def loadGenres(): Unit = {
+        def loadGenres(path: os.Path): Unit = {
             // load vinyls from file, if empty, create file
         }
 
-        def findGenreID(name: String): Unit = {
-            var genreID: Int = uninitialized
-            genres.foreach { genre=>
-                if name == genre.genreName then genreID = genre.genreID
-            }
-            return genreID
+        def findGenreID(name: String): Option[Int] = {
+            genres.find(_.genreName == name).map(_.genreID)
         }
     }
 }
