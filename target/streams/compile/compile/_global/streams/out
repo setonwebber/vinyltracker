@@ -1,9 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\main.scala:23:49 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m23 |[0m    print(System.getProperty([31m"user.dir"[0m) + [31m".src\main\scala\resources"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                 ^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                                invalid escape character[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\main.scala:23:54 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m23 |[0m    print(System.getProperty([31m"user.dir"[0m) + [31m".src\main\scala\resources"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                      ^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                                invalid escape character[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:164:66 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m164 |[0m                                [33mval[0m [36mnewID[0m = genresObject.addGenre(input)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m    |[0m                                                                  ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m    |[0m      too many arguments for [33mmethod[0m [35maddGenre[0m in [33mclass[0m [35mGenres[0m: (): Unit[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

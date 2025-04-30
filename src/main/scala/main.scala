@@ -7,15 +7,14 @@ import artists.*
 
 @main
 def main(): Unit = {
-  var path: os.Path = System.getProperty("user.dir") + raw"\src\main\scala\resources"
-  var vinyls = Vinyls()
-  vinyls.loadVinyls(path)
-
   var genres = Genres()
-  genres.loadGenres(path)
+  genres.loadGenres()
 
   var artists = Artists()
-  artists.loadArtists(path)
+  artists.loadArtists()
+
+  var vinyls = Vinyls(artists, genres)
+  vinyls.loadVinyls()
 
   var running: Boolean = true
   println("Welcome to the Scala Vinyl Tracking App. What would you like to access?")
