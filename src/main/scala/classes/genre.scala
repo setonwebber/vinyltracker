@@ -1,4 +1,7 @@
 import scala.io.StdIn.readLine
+import scala.io.Source
+import scala.util.{Try, Success, Failure}
+import java.io.{File, PrintWriter}
 
 package genres{
 
@@ -50,23 +53,59 @@ package genres{
         }
 
         def saveGenres(): Unit = {
-            // save vinyls to file
+            try {
+                val writer = new PrintWriter(file.toIO)
+                genres.foreach { g =>
+                    val genreData = s"{${g.genreID}, \"${g.genreName}\"}"
+                    writer.println(genreData)
+                }
+                writer.close()
+                println("Genres saved successfully.")
+            } catch {
+                case e: Exception => println(s"Error saving genres: ${e.getMessage}")
+            }
         }
 
         def loadGenres(): Unit = {
-            val path: os.Path = os.pwd / "resources"
-            var file: os.Path = path / "genres.json"
-            if (!os.exists(path)) then
-                // create directory if doesnt exist
-                os.makeDir(path)
+            if (!os.exists(path)) os.makeDir(path)
 
-            if (os.exists(file)) then {
-                println("loaded file")
+            if (os.exists(file)) {
+                try {
+                    val source = Source.fromFile(file.toIO)
+                    val lines = source.getLines().toList
+                    source.close()
+
+                    genres = lines.flatMap { line =>
+                        val cleanedLine = line.trim.stripPrefix("{").stripSuffix("}")
+                        val parts = cleanedLine.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").map(_.trim)
+
+                        if (parts.length == 2) {
+                            try {
+                                val genreID = parts(0).toInt
+                                val genreName = parts(1).stripPrefix("\"").stripSuffix("\"")
+                                Some(Genre(genreID, genreName))
+                            } catch {
+                                case e: Exception =>
+                                    println(s"Error parsing genre: ${e.getMessage}")
+                                    None
+                            }
+                        } else {
+                            println(s"Invalid genre format: $line")
+                            None
+                        }
+                    }
+
+                    println(s"Loaded ${genres.length} genres.")
+                } catch {
+                    case e: Exception =>
+                        println(s"Error loading genres: ${e.getMessage}")
+                }
             } else {
                 os.write(file, "")
                 println("Created new genres file.")
             }
         }
+
 
         def findGenreID(name: String): Option[Int] = {
             genres.find(_.genreName.toLowerCase() == name.toLowerCase()).map(_.genreID)

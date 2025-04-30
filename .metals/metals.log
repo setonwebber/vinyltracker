@@ -8417,3 +8417,307 @@ WARNING: empty definition using pc, found symbol in pc: `<none>`. (full report a
 2025.04.30 17:58:23 INFO  Processing buildTarget/compile
 Apr 30, 2025 6:00:55 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
 WARNING: empty definition using pc, found symbol in pc: `<none>`. (full report at: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\.metals\.reports\metals-full\2025-03-05\r_empty-definition_(Project_81bd6e8f1c)_13-51-52-809.md)
+Apr 30, 2025 6:03:55 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+WARNING: empty definition using pc, found symbol in pc: `<init>`. (full report at: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\.metals\.reports\metals-full\2025-04-30\r_empty-definition_(vinyltracker)_18-03-55-335.md)
+2025.04.30 18:03:55 INFO  Processing buildTarget/compile
+2025.04.30 18:03:55 INFO  compiling vinyltracker
+2025.04.30 18:03:55 INFO  compiling 1 Scala source to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.04.30 18:03:55 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:56:33 
+56 |                val writer = new PrintWriter(file.toIO)
+   |                                 ^^^^^^^^^^^
+   |                                 Not found: type PrintWriter
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:03:55 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:73:33 
+73 |                    val source = Source.fromFile(file.toIO)
+   |                                 ^^^^^^
+   |                                Not found: Source - did you mean source?
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:03:55 ERROR two errors found
+2025.04.30 18:03:55 INFO  time: compiled vinyltracker in 0.14s
+2025.04.30 18:03:55 ERROR (Compile / compileIncremental) Compilation failed
+2025.04.30 18:03:55 INFO  Cancelling compilation on sbt server
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: (Compile / [31mcompileIncremental[0m) Compilation failed
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2025.04.30 18:03:55 INFO  Processing buildTarget/scalaMainClasses
+2025.04.30 18:03:55 INFO  compiling vinyltracker
+2025.04.30 18:03:55 INFO  compiling 1 Scala source to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.04.30 18:03:55 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:56:33 
+56 |                val writer = new PrintWriter(file.toIO)
+   |                                 ^^^^^^^^^^^
+   |                                 Not found: type PrintWriter
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:03:55 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:73:33 
+73 |                    val source = Source.fromFile(file.toIO)
+   |                                 ^^^^^^
+   |                                Not found: Source - did you mean source?
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:03:55 ERROR two errors found
+2025.04.30 18:03:55 INFO  time: compiled vinyltracker in 0.11s
+2025.04.30 18:03:55 ERROR (Compile / compileIncremental) Compilation failed
+2025.04.30 18:03:55 INFO  Scala main classes not supported by server
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: (Compile / [31mcompileIncremental[0m) Compilation failed
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2025.04.30 18:03:55 INFO  Processing buildTarget/scalaTestClasses
+Apr 30, 2025 6:04:05 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+WARNING: empty definition using pc, found symbol in pc: _empty_/`<import>`. (full report at: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\.metals\.reports\metals-full\2025-04-28\r_empty-definition_(vinyltracker)_16-32-35-623.md)
+Apr 30, 2025 6:04:09 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+WARNING: empty definition using pc, found symbol in pc: _empty_/`<import>`. (full report at: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\.metals\.reports\metals-full\2025-04-28\r_empty-definition_(vinyltracker)_16-32-35-623.md)
+2025.04.30 18:04:09 INFO  Processing buildTarget/compile
+2025.04.30 18:04:09 INFO  compiling vinyltracker
+2025.04.30 18:04:09 INFO  compiling 2 Scala sources to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.04.30 18:04:09 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:56:33 
+56 |                val writer = new PrintWriter(file.toIO)
+   |                                 ^^^^^^^^^^^
+   |                                 Not found: type PrintWriter
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:04:09 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:73:33 
+73 |                    val source = Source.fromFile(file.toIO)
+   |                                 ^^^^^^
+   |                                Not found: Source - did you mean source?
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:04:09 ERROR two errors found
+2025.04.30 18:04:09 INFO  time: compiled vinyltracker in 0.13s
+2025.04.30 18:04:09 ERROR (Compile / compileIncremental) Compilation failed
+2025.04.30 18:04:09 INFO  Cancelling compilation on sbt server
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: (Compile / [31mcompileIncremental[0m) Compilation failed
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2025.04.30 18:04:09 INFO  Processing buildTarget/scalaTestClasses
+2025.04.30 18:04:09 INFO  Processing buildTarget/scalaMainClasses
+2025.04.30 18:04:09 INFO  compiling vinyltracker
+2025.04.30 18:04:09 INFO  compiling 2 Scala sources to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.04.30 18:04:09 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:56:33 
+56 |                val writer = new PrintWriter(file.toIO)
+   |                                 ^^^^^^^^^^^
+   |                                 Not found: type PrintWriter
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:04:09 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:73:33 
+73 |                    val source = Source.fromFile(file.toIO)
+   |                                 ^^^^^^
+   |                                Not found: Source - did you mean source?
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:04:09 ERROR two errors found
+2025.04.30 18:04:09 INFO  time: compiled vinyltracker in 0.16s
+2025.04.30 18:04:09 ERROR (Compile / compileIncremental) Compilation failed
+2025.04.30 18:04:10 INFO  Scala main classes not supported by server
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: (Compile / [31mcompileIncremental[0m) Compilation failed
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2025.04.30 18:04:14 INFO  Processing buildTarget/compile
+2025.04.30 18:04:14 INFO  compiling vinyltracker
+2025.04.30 18:04:14 INFO  compiling 5 Scala sources to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.04.30 18:04:14 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:56:33 
+56 |                val writer = new PrintWriter(file.toIO)
+   |                                 ^^^^^^^^^^^
+   |                                 Not found: type PrintWriter
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:04:14 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:73:33 
+73 |                    val source = Source.fromFile(file.toIO)
+   |                                 ^^^^^^
+   |                                Not found: Source - did you mean source?
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:04:14 ERROR two errors found
+2025.04.30 18:04:14 INFO  time: compiled vinyltracker in 0.17s
+2025.04.30 18:04:14 ERROR (Compile / compileIncremental) Compilation failed
+2025.04.30 18:04:14 INFO  Cancelling compilation on sbt server
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: (Compile / [31mcompileIncremental[0m) Compilation failed
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2025.04.30 18:04:14 INFO  Processing buildTarget/scalaMainClasses
+2025.04.30 18:04:14 INFO  compiling vinyltracker
+2025.04.30 18:04:14 INFO  compiling 5 Scala sources to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.04.30 18:04:14 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:56:33 
+56 |                val writer = new PrintWriter(file.toIO)
+   |                                 ^^^^^^^^^^^
+   |                                 Not found: type PrintWriter
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:04:14 ERROR -- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\artist.scala:73:33 
+73 |                    val source = Source.fromFile(file.toIO)
+   |                                 ^^^^^^
+   |                                Not found: Source - did you mean source?
+   |
+   | longer explanation available when compiling with `-explain`
+2025.04.30 18:04:14 ERROR two errors found
+2025.04.30 18:04:14 INFO  time: compiled vinyltracker in 0.21s
+2025.04.30 18:04:14 ERROR (Compile / compileIncremental) Compilation failed
+2025.04.30 18:04:14 INFO  Scala main classes not supported by server
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: (Compile / [31mcompileIncremental[0m) Compilation failed
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2025.04.30 18:04:14 INFO  Processing buildTarget/scalaTestClasses
+2025.04.30 18:04:16 INFO  Processing buildTarget/compile
+2025.04.30 18:04:16 INFO  compiling vinyltracker
+2025.04.30 18:04:16 INFO  compiling 5 Scala sources to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.04.30 18:04:16 INFO  time: compiled vinyltracker in 0.29s
+2025.04.30 18:04:16 INFO  Processing buildTarget/scalaMainClasses
+2025.04.30 18:04:16 INFO  compiling vinyltracker
+2025.04.30 18:04:16 INFO  Processing buildTarget/scalaTestClasses
+2025.04.30 18:04:23 INFO  Processing buildTarget/compile
+2025.04.30 18:05:23 INFO  Processing buildTarget/compile
+2025.04.30 18:06:23 INFO  Processing buildTarget/compile
+Apr 30, 2025 6:06:44 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+WARNING: empty definition using pc, found symbol in pc: `<none>`. (full report at: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\.metals\.reports\metals-full\2025-03-05\r_empty-definition_(Project_81bd6e8f1c)_13-51-52-809.md)
+2025.04.30 18:06:44 INFO  Processing buildTarget/compile
+2025.04.30 18:06:44 INFO  compiling vinyltracker
+2025.04.30 18:06:44 INFO  compiling 1 Scala source to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.04.30 18:06:44 INFO  time: compiled vinyltracker in 0.14s
+2025.04.30 18:06:44 INFO  Processing buildTarget/scalaMainClasses
+2025.04.30 18:06:44 INFO  compiling vinyltracker
+2025.04.30 18:06:44 INFO  Processing buildTarget/scalaTestClasses
+Apr 30, 2025 6:06:48 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+WARNING: empty definition using pc, found symbol in pc: `<none>`. (full report at: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\.metals\.reports\metals-full\2025-03-05\r_empty-definition_(Project_81bd6e8f1c)_13-51-52-809.md)
+2025.04.30 18:06:50 INFO  compiling vinyltracker
+2025.04.30 18:06:50 INFO  running main
+2025.04.30 18:06:50 INFO  Classpath:
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\job-21\target\c174bc5e\831006c5\vinyltracker_3-0.1.0-SNAPSHOT.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\d547752e\39645121\scala3-library_3-3.6.3.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\9ff4d8fb\af29af08\toolkit_3-0.5.0.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\ee5e4d38\507e61bd\scala-library-2.13.15.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\466ee772\61406796\core_3-4.0.0-M16.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\096104db\66ce0184\upickle_3-4.0.0-M16.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\772c867a\8218a3f6\upickle_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\649e809a\49ad6dae\os-lib_3-0.10.3.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\89ab6724\796a5d7b\core_3-1.7.10.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\c841424f\638bd3f2\core_3-1.3.19.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\e9270615\ceb859aa\ws_3-1.3.19.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\9e887011\0dcabdfb\json-common_3-4.0.0-M16.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\afb7be48\ba6a14bc\ujson_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\7c1e1702\3d09db16\upack_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\fdd9f806\3c0d2867\upickle-implicits_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\29a3773b\38316204\geny_3-1.1.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\1ad7218d\871dcbc5\upickle-core_3-3.3.1.jar
+2025.04.30 18:07:03 INFO  compiling vinyltracker
+2025.04.30 18:07:03 INFO  running main
+2025.04.30 18:07:03 INFO  Classpath:
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\job-22\target\c174bc5e\831006c5\vinyltracker_3-0.1.0-SNAPSHOT.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\d547752e\39645121\scala3-library_3-3.6.3.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\9ff4d8fb\af29af08\toolkit_3-0.5.0.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\ee5e4d38\507e61bd\scala-library-2.13.15.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\466ee772\61406796\core_3-4.0.0-M16.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\096104db\66ce0184\upickle_3-4.0.0-M16.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\772c867a\8218a3f6\upickle_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\649e809a\49ad6dae\os-lib_3-0.10.3.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\89ab6724\796a5d7b\core_3-1.7.10.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\c841424f\638bd3f2\core_3-1.3.19.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\e9270615\ceb859aa\ws_3-1.3.19.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\9e887011\0dcabdfb\json-common_3-4.0.0-M16.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\afb7be48\ba6a14bc\ujson_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\7c1e1702\3d09db16\upack_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\fdd9f806\3c0d2867\upickle-implicits_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\29a3773b\38316204\geny_3-1.1.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\1ad7218d\871dcbc5\upickle-core_3-3.3.1.jar
+Apr 30, 2025 6:07:30 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9819
+2025.04.30 18:08:17 INFO  Processing buildTarget/compile
+2025.04.30 18:08:17 INFO  Processing buildTarget/compile
+2025.04.30 18:08:17 INFO  compiling vinyltracker
+2025.04.30 18:08:17 INFO  compiling 1 Scala source to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.04.30 18:08:17 INFO  time: compiled vinyltracker in 0.16s
+2025.04.30 18:08:17 INFO  Processing buildTarget/scalaMainClasses
+2025.04.30 18:08:17 INFO  compiling vinyltracker
+2025.04.30 18:08:17 INFO  Processing buildTarget/scalaTestClasses
+2025.04.30 18:08:17 INFO  compiling vinyltracker
+2025.04.30 18:08:17 INFO  running main
+2025.04.30 18:08:17 INFO  Classpath:
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\job-23\target\c174bc5e\2fcb216b\vinyltracker_3-0.1.0-SNAPSHOT.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\d547752e\39645121\scala3-library_3-3.6.3.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\9ff4d8fb\af29af08\toolkit_3-0.5.0.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\ee5e4d38\507e61bd\scala-library-2.13.15.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\466ee772\61406796\core_3-4.0.0-M16.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\096104db\66ce0184\upickle_3-4.0.0-M16.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\772c867a\8218a3f6\upickle_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\649e809a\49ad6dae\os-lib_3-0.10.3.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\89ab6724\796a5d7b\core_3-1.7.10.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\c841424f\638bd3f2\core_3-1.3.19.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\e9270615\ceb859aa\ws_3-1.3.19.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\9e887011\0dcabdfb\json-common_3-4.0.0-M16.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\afb7be48\ba6a14bc\ujson_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\7c1e1702\3d09db16\upack_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\fdd9f806\3c0d2867\upickle-implicits_3-3.3.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\29a3773b\38316204\geny_3-1.1.1.jar
+	C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\bg-jobs\sbt_7fe587ea\target\1ad7218d\871dcbc5\upickle-core_3-3.3.1.jar
+2025.04.30 18:08:59 INFO  Processing buildTarget/compile
+Exception in thread "pool-50-thread-29" java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:244)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:153)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025.04.30 18:09:23 INFO  Shutting down server
+2025.04.30 18:09:23 INFO  shutting down Metals
+2025.04.30 18:09:23 INFO  Shut down connection with build server.
+2025.04.30 18:09:23 INFO  Exiting server

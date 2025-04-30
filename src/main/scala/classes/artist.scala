@@ -1,4 +1,7 @@
 import scala.io.StdIn.readLine
+import scala.io.Source
+import scala.util.{Try, Success, Failure}
+import java.io.{File, PrintWriter}
 
 package artists{
 
@@ -36,7 +39,7 @@ package artists{
             val artistName = name
             val artistDOB = dob.getOrElse("unknown")
             val newArtist = Artist(artistID, artistName, artistDOB)
-            
+
             artists = artists :+ newArtist
             saveArtists()
             return artistID
@@ -52,23 +55,60 @@ package artists{
         }
 
         def saveArtists(): Unit = {
-            // save Artists to file
+            try {
+                val writer = new PrintWriter(file.toIO)
+                artists.foreach { a =>
+                    val artistData = s"{${a.artistID}, \"${a.artistName}\", \"${a.artistDOB}\"}"
+                    writer.println(artistData)
+                }
+                writer.close()
+                println("Artists saved successfully.")
+            } catch {
+                case e: Exception => println(s"Error saving artists: ${e.getMessage}")
+            }
         }
 
         def loadArtists(): Unit = {
-            val path: os.Path = os.pwd / "resources"
-            var file: os.Path = path / "artists.json"
-            if (!os.exists(path)) then
-                // create directory if doesnt exist
-                os.makeDir(path)
+            if (!os.exists(path)) os.makeDir(path)
 
-            if (os.exists(file)) then {
-                println("loaded file")
+            if (os.exists(file)) {
+                try {
+                    val source = Source.fromFile(file.toIO)
+                    val lines = source.getLines().toList
+                    source.close()
+
+                    artists = lines.flatMap { line =>
+                        val cleanedLine = line.trim.stripPrefix("{").stripSuffix("}")
+                        val parts = cleanedLine.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").map(_.trim)
+
+                        if (parts.length == 3) {
+                            try {
+                                val artistID = parts(0).toInt
+                                val artistName = parts(1).stripPrefix("\"").stripSuffix("\"")
+                                val artistDOB = parts(2).stripPrefix("\"").stripSuffix("\"")
+                                Some(Artist(artistID, artistName, artistDOB))
+                            } catch {
+                                case e: Exception =>
+                                    println(s"Error parsing artist: ${e.getMessage}")
+                                    None
+                            }
+                        } else {
+                            println(s"Invalid artist format: $line")
+                            None
+                        }
+                    }
+
+                    println(s"Loaded ${artists.length} artists.")
+                } catch {
+                    case e: Exception =>
+                        println(s"Error loading artists: ${e.getMessage}")
+                }
             } else {
                 os.write(file, "")
-                println("Created new artits file.")
+                println("Created new artists file.")
             }
         }
+
 
         def findArtistID(name: String): Option[Int] = {
             artists.find(_.artistName.toLowerCase() == name.toLowerCase()).map(_.artistID)

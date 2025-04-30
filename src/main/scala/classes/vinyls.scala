@@ -1,7 +1,7 @@
 import scala.io.StdIn.readLine
-import scala.io.Source;
-import scala.util.{Try, Success, Failure};
-import java.io.{File, PrintWriter};
+import scala.io.Source
+import scala.util.{Try, Success, Failure}
+import java.io.{File, PrintWriter}
 
 import functions.*
 import genres.*
@@ -93,7 +93,7 @@ package vinyls{
                 }
             }
 
-            val releaseDate = askUntilValid("Release Date (YYYY-MM-DD): ") { input =>
+            val releaseDate = askUntilValid("Release Date (DD-MM-2002): ") { input =>
                 if (input.matches("\\d{4}-\\d{2}-\\d{2}")) {
                     Some(input) 
                 } else {
