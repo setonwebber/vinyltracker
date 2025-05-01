@@ -5,8 +5,9 @@ package functions{
         var valid = false
         var result: Option[T] = None
 
+
         while (!valid) {
-            val input = readLine(question)
+            val input = readLine(question).trim
 
             result = validate(input)
             valid = result.isDefined
@@ -16,6 +17,7 @@ package functions{
             }
         }
 
+        // when valid is true, return result as value.
         result.get
     }
 }

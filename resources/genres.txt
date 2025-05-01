@@ -1,2 +1,4 @@
 {1, "Rock"}
 {2, "Alt Rock"}
+{3, "Folk"}
+{4, "Indie"}

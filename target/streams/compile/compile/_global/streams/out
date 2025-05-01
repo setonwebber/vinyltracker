@@ -1,25 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E189] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:49:63 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m49 |[0m                            [33mcase[0m [31m"name"[0m or [31m"artist"[0m or [31m"genre"[0m or [31m"type"[0m =>[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                               ^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                           no pattern match extractor named or was found[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E189] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:49:52 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m49 |[0m                            [33mcase[0m [31m"name"[0m or [31m"artist"[0m or [31m"genre"[0m or [31m"type"[0m =>[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                    ^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                           no pattern match extractor named or was found[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E189] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:49:40 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m49 |[0m                            [33mcase[0m [31m"name"[0m or [31m"artist"[0m or [31m"genre"[0m or [31m"type"[0m =>[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                        ^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                           no pattern match extractor named or was found[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E189] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:53:41 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m53 |[0m                            [33mcase[0m [31m"price"[0m or [31m"date"[0m =>[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                         ^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                           no pattern match extractor named or was found[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala:517:40 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m517 |[0m                            [33mval[0m [36mparts[0m = ArrayBuffer[[35mString[0m]()[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m    |[0m                                        ^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m    |[0m                                        Not found: ArrayBuffer[0m
+[0m[[0m[31merror[0m] [0m[0m[31m    |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m    |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
