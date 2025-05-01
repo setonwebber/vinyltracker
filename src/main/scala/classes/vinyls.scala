@@ -555,6 +555,7 @@ package vinyls{
                                 println(s"Invalid line format: $line")
                                 None
                             } else {
+                                // initalise all parts into variables to create a vinyl object
                                 val vinylID = parts(0).toInt
                                 val vinylName = parts(1).stripPrefix("\"").stripSuffix("\"")
                                 val vinylType = parts(2).stripPrefix("\"").stripSuffix("\"")
@@ -562,12 +563,21 @@ package vinyls{
                                 val condition = parts(4).stripPrefix("\"").stripSuffix("\"")
                                 val price = parts(5).toFloat
 
-                                val artistsIDs = if (parts(6) == "[]") List()
-                                                else parts(6).stripPrefix("[").stripSuffix("]").split(",").map(_.trim.toInt).toList
+                                val artistsIDs = if (parts(6) == "[]") {
+                                    List() // if part indicates an empty list, create empty list
+                                } else {
+                                    // remove brackets and split each integer by comma, initalise artistsIDs to list
+                                    parts(6).stripPrefix("[").stripSuffix("]").split(",").map(_.trim.toInt).toList
+                                }
 
-                                val genreIDs = if (parts(7) == "[]") List()
-                                            else parts(7).stripPrefix("[").stripSuffix("]").split(",").map(_.trim.toInt).toList
-
+                                val genreIDs = if (parts(7) == "[]") {
+                                    List() // if part indicates an empty list, create empty list
+                                } else {
+                                    // remove brackets and split each integer by comma, initalise genreIDs to list
+                                    parts(7).stripPrefix("[").stripSuffix("]").split(",").map(_.trim.toInt).toList
+                                }
+                                
+                                // attempt to make a vinyl object out of the values this adds it to the vinyls list
                                 Some(Vinyl(vinylID, vinylName, vinylType, releaseDate, condition, price, artistsIDs, genreIDs))
                             }
                         } catch {
@@ -576,7 +586,6 @@ package vinyls{
                                 None
                         }
                     }
-
 
                     // println(s"Loaded ${vinyls.length} vinyls from the file.")
                 } catch {
