@@ -112,13 +112,6 @@ package artists{
 
         def findArtistID(name: String): Option[Int] = {
             artists.find(_.artistName.toLowerCase() == name.toLowerCase()).map(_.artistID)
-            // var artistID: Option[Int] = None
-            // artists.foreach { artist =>
-            //     if (name == artist.artistName) {
-            //         artistID = Some(artist.artistID)
-            //     }
-            // }
-            // artistID
         }
     }
 }

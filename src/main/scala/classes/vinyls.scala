@@ -41,10 +41,36 @@ package vinyls{
 
                 readLine("> ") match {
                     case "1" => displayVinyls()
-                    case "2" => displayVinyls(/* search criteriria functionality*/ )
+                    case "2" =>
+                        println("Search by: name, artist, genre, type, price, date")
+                        val field = readLine("> ").trim.toLowerCase
+
+                        field match {
+                            case "name" | "artist" | "genre" | "type" =>
+                                val query = readLine(s"Enter value to search in $field: ").trim.toLowerCase
+                                displayVinyls(Some(field), Some(query))
+
+                            case "price" =>
+                                val sortOrder = readLine("Sort by smallest (cheapest) or largest (most expensive): ").trim.toLowerCase
+                                displayVinyls(Some(field), Some(sortOrder))
+
+                            case "date" =>
+                                val sortOrder = readLine("Sort by smallest (oldest) or largest (newest): ").trim.toLowerCase
+                                displayVinyls(Some(field), Some(sortOrder))
+                                
+                            case _ =>
+                                println("Invalid search field.")
+                        }
+
                     case "3" => addVinyl()
-                    case "4" => editVinyl()
-                    case "5" => removeVinyl()
+                    case "4" =>
+                        val id = readLine("Enter vinyl name to edit: ").trim
+
+                        editVinyl(findVinylID(id).getOrElse(-1))
+
+                    case "5" =>
+                        val id = readLine("Enter vinyl name to remove: ").trim
+                        removeVinyl(findVinylID(id).getOrElse(-1))
                     case "6" => running = false
                     case _ => println("Invalid")
                 }
@@ -62,8 +88,55 @@ package vinyls{
                     println(s"${v.vinylID}: ${v.vinylName}, ${v.vinylType}, ${v.releaseDate}, ${v.condition}, ${v.price}, Artists: ${artistNames.mkString(", ")}, Genres: ${genreNames.mkString(", ")}")
                 }
             } else {
-                // Placeholder for filtered display logic
-                println("Filtered display not implemented yet.")
+                val filtered = (searchOption.get, searchCriteria.get.toLowerCase) match {
+                    case ("name", query) =>
+                        vinyls.filter(_.vinylName.toLowerCase.contains(query))
+
+                    case ("artist", query) =>
+                        vinyls.filter(v => 
+                            v.artistsIDs.exists(id => 
+                                artistsObject.artists.find(_.artistID == id).exists(_.artistName.toLowerCase.contains(query))
+                            )
+                        )
+
+                    case ("genre", query) =>
+                        vinyls.filter(v =>
+                            v.genreIDs.exists(id =>
+                                genresObject.genres.find(_.genreID == id).exists(_.genreName.toLowerCase.contains(query))
+                            )
+                        )
+
+                    case ("type", query) =>
+                        vinyls.filter(_.vinylType.toLowerCase.contains(query))
+
+                    case ("price", "smallest") =>
+                        vinyls.sortBy(_.price)
+
+                    case ("price", "largest") =>
+                        vinyls.sortBy(_.price).reverse
+
+                    case ("date", "smallest") =>
+                        vinyls.sortBy(_.releaseDate)
+
+                    case ("date", "largest") =>
+                        vinyls.sortBy(_.releaseDate).reverse
+
+                    case _ =>
+                        println("Invalid search.")
+                        vinyls
+                }
+
+                // Print filtered or sorted vinyls
+                if (filtered.isEmpty) {
+                    println(s"No vinyls found matching your search query.")
+                } else {
+                    filtered.foreach { v =>
+                        val artistNames = v.artistsIDs.flatMap(id => artistsObject.artists.find(_.artistID == id).map(_.artistName))
+                        val genreNames = v.genreIDs.flatMap(id => genresObject.genres.find(_.genreID == id).map(_.genreName))
+
+                        println(s"${v.vinylID}: ${v.vinylName}, ${v.vinylType}, ${v.releaseDate}, ${v.condition}, ${v.price}, Artists: ${artistNames.mkString(", ")}, Genres: ${genreNames.mkString(", ")}")
+                    }
+                }
             }
         }
 
@@ -77,7 +150,7 @@ package vinyls{
 
             val vinylName = askUntilValid("Vinyl Name: ") { input =>
                 if (input.nonEmpty) {
-                    Some(input) 
+                    Some(input.trim) 
                 } else {
                     None
                 }
@@ -94,7 +167,7 @@ package vinyls{
             }
 
             val releaseDate = askUntilValid("Release Date (DD-MM-2002): ") { input =>
-                if (input.matches("\\d{4}-\\d{2}-\\d{2}")) {
+                if (input.matches("\\d{2}-\\d{2}-\\d{4}")) {
                     Some(input) 
                 } else {
                     None
@@ -103,7 +176,7 @@ package vinyls{
 
             val condition = askUntilValid("Condition (New, Good, Worn, etc.): ") { input =>
                 if (input.nonEmpty) {
-                    Some(input) 
+                    Some(input.trim) 
                 } else {
                     None
                 }
@@ -179,13 +252,104 @@ package vinyls{
         }
 
 
-        def editVinyl(): Unit = {
-            // edit vinyl from vinyls
+        def editVinyl(vinylID: Int): Unit = {
+            vinyls.find(_.vinylID == vinylID) match {
+                case Some(vinyl) =>
+                    var editing = true
+                    while (editing) {
+                        println(
+                            s"Editing Vinyl ID ${vinyl.vinylID}: ${vinyl.vinylName}\n" +
+                            "What would you like to edit?\n" +
+                            "1. Name\n2. Type\n3. Release Date\n4. Condition\n5. Price\n6. Add Artist\n7. Add Genre\n8. Done"
+                        )
+                        readLine("> ") match {
+                            case "1" =>
+                                val name = readLine("Enter new vinyl name: ").trim
+                                if (name.nonEmpty) vinyl.vinylName = name
+                            case "2" =>
+                                val typ = readLine("Enter new type (EP, LP, Single, Other): ").trim.capitalize
+                                val valid = Set("EP", "LP", "Single", "Other")
+                                if (valid.contains(typ)) vinyl.vinylType = typ
+                                else println("Invalid type.")
+                            case "3" =>
+                                val date = readLine("Enter new release date (YYYY-MM-DD): ").trim
+                                if (date.matches("\\d{2}-\\d{2}-\\d{4}")) vinyl.releaseDate = date
+                                else println("Invalid date format.")
+                            case "4" =>
+                                val cond = readLine("Enter new condition: ").trim
+                                if (cond.nonEmpty) vinyl.condition = cond
+                            case "5" =>
+                                val priceStr = readLine("Enter new price: ").trim
+                                try {
+                                    vinyl.price = priceStr.toFloat
+                                } catch {
+                                    case _: Exception => println("Invalid price.")
+                                }
+                            case "6" =>
+                                val input = readLine("Enter artist name to add: ").trim
+                                artistsObject.findArtistID(input) match {
+                                    case Some(id) =>
+                                        if (!vinyl.artistsIDs.contains(id)) {
+                                            vinyl.artistsIDs :+= id
+                                            println("Artist added.")
+                                        } else {
+                                            println("Artist already on vinyl.")
+                                        }
+                                    case None =>
+                                        val newID = artistsObject.addArtist(input)
+                                        vinyl.artistsIDs :+= newID
+                                        println("New artist added.")
+                                        println("Artist added.")
+                                }
+                            case "7" =>
+                                val input = readLine("Enter genre name to add: ").trim
+                                genresObject.findGenreID(input) match {
+                                    case Some(id) =>
+                                        if (!vinyl.genreIDs.contains(id)) {
+                                            vinyl.genreIDs :+= id
+                                            println("Genre added.")
+                                        } else {
+                                            println("Genre already on vinyl.")
+                                        }
+                                    case None =>
+                                        val newID = genresObject.addGenre(input)
+                                        vinyl.genreIDs :+= newID
+                                        println("New genre added.")
+                                        println("Genre added.")
+                                }
+                            case "8" =>
+                                editing = false
+                                saveVinyls()
+                                println("Changes saved.")
+                            case _ =>
+                                println("Invalid option.")
+                        }
+                    }
+
+                case None =>
+                    println(s"No vinyl found with ID $vinylID.")
+            }
         }
 
-        def removeVinyl(): Unit = {
-            // remove vinyl from vinyls
+
+        def removeVinyl(vinylID: Int): Unit = {
+            val vinylOpt = vinyls.find(_.vinylID == vinylID)
+            vinylOpt match {
+                case Some(v) =>
+                    println(s"Are you sure you want to remove '${v.vinylName}'? (y/n)")
+                    val confirm = readLine("> ").trim.toLowerCase
+                    if (confirm == "y" || confirm == "yes") {
+                        vinyls = vinyls.filterNot(_.vinylID == vinylID)
+                        saveVinyls()
+                        println("Vinyl removed and saved.")
+                    } else {
+                        println("Remove cancelled.")
+                    }
+                case None =>
+                    println(s"No vinyl found with ID $vinylID.")
+            }
         }
+
 
         def saveVinyls(): Unit = {
             // save vinyls to file
@@ -215,48 +379,61 @@ package vinyls{
                     source.close()
 
                     vinyls = lines.flatMap { line =>
-                        val cleanedLine = line.trim.stripPrefix("{").stripSuffix("}")
+                        try {
+                            val cleanedLine = line.trim.stripPrefix("{").stripSuffix("}")
 
-                        // this regex splits the line using commas, it has a negative lookahead to make sure that it is only using commas outside of quotation marks.
-                        val section = cleanedLine.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").map(_.trim)
+                            // Manually extract fields by index using a small state machine approach
+                            val parts = scala.collection.mutable.ArrayBuffer[String]()
+                            val sb = new StringBuilder
+                            var inQuotes = false
+                            var inBrackets = 0
 
-                        // Check if the line has exactly 8 section (vinylID, vinylName, vinylType, releaseDate, condition, price, artistsIDs, genreIDs)
-                        if (section.length == 8) {
-                            try {
-                                val vinylID = section(0).toInt
-                                val vinylName = section(1).stripPrefix("\"").stripSuffix("\"")
-                                val vinylType = section(2).stripPrefix("\"").stripSuffix("\"")
-                                val releaseDate = section(3).stripPrefix("\"").stripSuffix("\"")
-                                val condition = section(4).stripPrefix("\"").stripSuffix("\"")
-                                val price = section(5).toFloat
-
-                                // parse the artistsIDs and genreIDs (split by commas and convert to List of Ints)
-                                val artistsIDs = if (section(6).trim == "[]") {
-                                    List()
+                            for (c <- cleanedLine) {
+                                c match {
+                                    case '"' => 
+                                        inQuotes = !inQuotes
+                                        sb.append(c)
+                                    case '[' => 
+                                        inBrackets += 1
+                                        sb.append(c)
+                                    case ']' => 
+                                        inBrackets -= 1
+                                        sb.append(c)
+                                    case ',' if !inQuotes && inBrackets == 0 =>
+                                        parts += sb.toString().trim
+                                        sb.clear()
+                                    case _ => 
+                                        sb.append(c)
                                 }
-                                else {
-                                    section(6).split(",").map(_.trim.toInt).toList
-                                }
-                                
-                                val genreIDs = if (section(7).trim == "[]") {
-                                    List()
-                                }
-                                else {
-                                    section(7).split(",").map(_.trim.toInt).toList
-                                }
-
-                                // create a vinyl object
-                                Some(Vinyl(vinylID, vinylName, vinylType, releaseDate, condition, price, artistsIDs, genreIDs))
-                            } catch {
-                                case e: Exception =>
-                                    println(s"Error parsing vinyl data: ${e.getMessage}")
-                                    None
                             }
-                        } else {
-                            println(s"Invalid line format: $line")
-                            None
+                            parts += sb.toString().trim  // Add last field
+
+                            if (parts.length != 8) {
+                                println(s"Invalid line format: $line")
+                                None
+                            } else {
+                                val vinylID = parts(0).toInt
+                                val vinylName = parts(1).stripPrefix("\"").stripSuffix("\"")
+                                val vinylType = parts(2).stripPrefix("\"").stripSuffix("\"")
+                                val releaseDate = parts(3).stripPrefix("\"").stripSuffix("\"")
+                                val condition = parts(4).stripPrefix("\"").stripSuffix("\"")
+                                val price = parts(5).toFloat
+
+                                val artistsIDs = if (parts(6) == "[]") List()
+                                                else parts(6).stripPrefix("[").stripSuffix("]").split(",").map(_.trim.toInt).toList
+
+                                val genreIDs = if (parts(7) == "[]") List()
+                                            else parts(7).stripPrefix("[").stripSuffix("]").split(",").map(_.trim.toInt).toList
+
+                                Some(Vinyl(vinylID, vinylName, vinylType, releaseDate, condition, price, artistsIDs, genreIDs))
+                            }
+                        } catch {
+                            case e: Exception =>
+                                println(s"Error parsing line: $line\n${e.getMessage}")
+                                None
                         }
                     }
+
 
                     println(s"Loaded ${vinyls.length} vinyls from the file.")
                 } catch {
@@ -272,6 +449,10 @@ package vinyls{
                         println(s"Error creating vinyls file: ${e.getMessage}")
                 }
             }
+        }
+
+        def findVinylID(name: String): Option[Int] = {
+            vinyls.find(_.vinylName.toLowerCase() == name.toLowerCase()).map(_.vinylID)
         }
     }
 }

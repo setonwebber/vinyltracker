@@ -15,6 +15,7 @@ package artists{
 
     case class Artist(
         val artistID: Int,
+        var artistName: String,
         var artistDOB: String
     )
 
