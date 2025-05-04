@@ -820,3 +820,93 @@ java.util.concurrent.TimeoutException
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.lang.Thread.run(Thread.java:1583)
 
+2025.05.04 15:35:12 INFO  Shutting down server
+2025.05.04 15:35:12 INFO  shutting down Metals
+2025.05.04 15:35:12 ERROR cancellation error
+java.util.concurrent.ExecutionException: java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.super$get(FutureConvertersImpl.scala:92)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.$anonfun$get$2(FutureConvertersImpl.scala:92)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.package$.blocking(package.scala:124)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.get(FutureConvertersImpl.scala:92)
+	at scala.meta.internal.metals.MetalsLspService.cancel(MetalsLspService.scala:146)
+	at scala.meta.internal.metals.MetalsLspService.onShutdown(MetalsLspService.scala:691)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$shutdown$2(WorkspaceLspService.scala:1388)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$shutdown$2$adapted(WorkspaceLspService.scala:1388)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at scala.meta.internal.metals.WorkspaceLspService.shutdown(WorkspaceLspService.scala:1388)
+	at scala.meta.metals.MetalsLanguageServer.shutdown(MetalsLanguageServer.scala:248)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:271)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:201)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+Caused by: java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:754)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:627)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2025.05.04 15:35:12 INFO  Exiting server
+2025.05.04 15:36:24 INFO  Started: Metals version 1.5.2 in folders 'C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker' for client Visual Studio Code 1.99.3.
+2025.05.04 15:36:24 INFO  no build target found for C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\classes\vinyls.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.04 15:36:26 INFO  Attempting to connect to the build server...
+2025.05.04 15:36:38 INFO  Running BSP server List(C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot/bin/java, -Xms100m, -Xmx100m, -classpath, C:\Program Files (x86)\sbt\\bin\sbt-launch.jar, -Dsbt.script=file://C:\Program%20Files%20(x86)\sbt\bin\sbt.bat, xsbt.boot.Boot, -bsp)
+2025.05.04 15:36:38 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\.metals\bsp.trace.json or C:\Users\seton\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2025.05.04 15:36:39 INFO  Processing workspace/reload
+2025.05.04 15:36:39 INFO  compiling vinyltracker-build-build
+2025.05.04 15:36:40 INFO  compiling vinyltracker-build
+2025.05.04 15:36:40 INFO  time: Connected to build server in 14s
+2025.05.04 15:36:40 INFO  Connected to Build server: sbt v1.10.7
+2025.05.04 15:36:40 INFO  Processing workspace/buildTargets
+2025.05.04 15:36:40 INFO  Processing buildTarget/scalacOptions
+2025.05.04 15:36:40 INFO  Processing buildTarget/sources
+2025.05.04 15:36:41 INFO  Processing buildTarget/dependencySources
+2025.05.04 15:36:41 INFO  time: Imported build in 0.99s
+2025.05.04 15:36:45 INFO  time: indexed workspace in 3.24s
+2025.05.04 15:36:45 INFO  Processing buildTarget/scalaTestClasses
+2025.05.04 15:36:45 INFO  compiling vinyltracker
+2025.05.04 15:36:45 INFO  compiling 5 Scala sources to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...
+2025.05.04 15:36:46 INFO  compiling vinyltracker-test
+2025.05.04 15:36:46 INFO  time: compiled vinyltracker-test in 34ms
+2025.05.04 15:36:46 INFO  Processing buildTarget/scalaMainClasses
+2025.05.04 15:36:46 INFO  compiling vinyltracker
+2025.05.04 15:36:46 INFO  compiling vinyltracker-test
+2025.05.04 15:36:46 INFO  time: compiled vinyltracker-test in 8ms
+2025.05.04 15:36:46 INFO  Processing buildTarget/compile
+2025.05.04 15:36:46 INFO  compiling vinyltracker
+2025.05.04 15:36:46 INFO  compiling vinyltracker-test
+2025.05.04 15:36:46 INFO  time: compiled vinyltracker-test in 5ms
+2025.05.04 15:36:46 INFO  Processing buildTarget/scalaTestClasses
+2025.05.04 15:36:46 INFO  compiling vinyltracker
+2025.05.04 15:36:46 INFO  compiling vinyltracker-test
+2025.05.04 15:36:46 INFO  time: compiled vinyltracker-test in 9ms
+2025.05.04 15:36:46 INFO  Processing buildTarget/scalaMainClasses
+2025.05.04 15:36:46 INFO  compiling vinyltracker
+2025.05.04 15:36:46 INFO  compiling vinyltracker-test
+2025.05.04 15:36:46 INFO  time: compiled vinyltracker-test in 6ms
+2025.05.04 15:36:46 INFO  Processing buildTarget/jvmRunEnvironment
+2025.05.04 15:36:46 INFO  compiling vinyltracker
+2025.05.04 15:36:46 INFO  Processing buildTarget/jvmRunEnvironment
+2025.05.04 15:36:46 INFO  compiling vinyltracker
+May 04, 2025 3:36:47 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: shutdown
+2025.05.04 15:36:48 INFO  Running BSP server List(C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot/bin/java, -Xms100m, -Xmx100m, -classpath, C:\Program Files (x86)\sbt\\bin\sbt-launch.jar, -Dsbt.script=file://C:\Program%20Files%20(x86)\sbt\bin\sbt.bat, xsbt.boot.Boot, -bsp)
+2025.05.04 15:36:48 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\.metals\bsp.trace.json or C:\Users\seton\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2025.05.04 15:36:48 INFO  BSP server: [info] server was not detected. starting an instance
+2025.05.04 15:36:48 INFO  BSP server: [error] Failed to start server : java.io.IOException: Cannot run program "file://C:\Program Files (x86)\sbt\bin\sbt.bat" (in directory "C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker"): CreateProcess error=2, The system cannot find the file specified
