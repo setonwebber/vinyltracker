@@ -1,3 +1,8 @@
 {1, "Pink Floyd", "unknown"}
 {2, "Cameron Winter", "unknown"}
 {3, "C418", "unknown"}
+{4, "Godspeed You Black Emperor!", "unknown"}
+{5, "Panchiko", "unknown"}
+{6, "Tears for Fears", "unknown"}
+{7, "Swans", "unknown"}
+{8, "King Crimson", "unknown"}

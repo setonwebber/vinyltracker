@@ -114,8 +114,10 @@ package vinyls{
                     val artistNames = v.artistsIDs.flatMap(id => artistsObject.artists.find(_.artistID == id).map(_.artistName))
                     // this function searches through each ID in the genres list (from genres.scala) to find the corresponding name attached to the same id
                     val genreNames = v.genreIDs.flatMap(id => genresObject.genres.find(_.genreID == id).map(_.genreName))
+                    // some price formatter built into java that formats the prices with $ and commas, while also rounding to nearest hundreth
+                    val priceFormatter = java.text.NumberFormat.getCurrencyInstance
 
-                    println(s"${count}: ${v.vinylName}, ${v.vinylType}, ${v.releaseDate}, ${v.condition}, ${v.price}, Artists: ${artistNames.mkString(", ")}, Genres: ${genreNames.mkString(", ")}")
+                    println(s"${count}: ${v.vinylName} (${v.vinylType}) by ${artistNames.mkString(", ")} - ${v.releaseDate} (${genreNames.mkString(", ")}) | ${priceFormatter.format(v.price)} ${v.condition} ")
                     // iterate count (vinylid is not used as its not a valid indicator of which the order of vinyls)
                     count = count + 1
                 }
@@ -178,8 +180,10 @@ package vinyls{
                     filtered.foreach { v =>
                         val artistNames = v.artistsIDs.flatMap(id => artistsObject.artists.find(_.artistID == id).map(_.artistName))
                         val genreNames = v.genreIDs.flatMap(id => genresObject.genres.find(_.genreID == id).map(_.genreName))
+                        val priceFormatter = java.text.NumberFormat.getCurrencyInstance
 
-                        println(s"${count}: ${v.vinylName}, ${v.vinylType}, ${v.releaseDate}, ${v.condition}, ${v.price}, Artists: ${artistNames.mkString(", ")}, Genres: ${genreNames.mkString(", ")}")
+
+                        println(s"${count}: ${v.vinylName} (${v.vinylType}) by ${artistNames.mkString(", ")} - ${v.releaseDate} (${genreNames.mkString(", ")}) | ${priceFormatter.format(v.price)} ${v.condition} ")
                         count = count + 1
                     }
                 }
@@ -321,7 +325,7 @@ package vinyls{
             // save vinyls to file
             saveVinyls()
 
-            println(s"Added new vinyl: $newVinyl.vinylName")
+            println("Added new vinyl: " + newVinyl.vinylName)
         }
 
         // editVinyl() function called from vinyls.menu() takes in a vinylID value to determine which vinyl is edited.

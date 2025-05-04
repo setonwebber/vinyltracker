@@ -1,2 +1,5 @@
-{1, "Animals", "EP", "1977-01-23", "New", 60.0, [1], [1, 2]}
-{2, "Heavy Metal", "EP", "2024-12-06", "New", 49.99, [2], [1, 3, 4]}
+{3, "Lift Your Skinny Fists like Antennas to Heaven", "LP", "2000-10-09", "New", 30.98, [4], [5, 6, 7, 8]}
+{4, "D>E>A>T>H>M>E>T>A>L", "LP", "2020-02-14", "New", 85.25, [5], [4, 1, 9]}
+{5, "Songs from the Big Chair", "LP", "1985-02-25", "New", 42.99, [6], [10, 9, 11, 1]}
+{6, "To Be kind", "LP", "2014-05-03", "New", 46.48, [7], [12, 13, 7, 8]}
+{7, "In The Court Of The Crimson King", "LP", "1969-10-10", "New", 49.47, [8], [7, 13, 1, 6, 2]}

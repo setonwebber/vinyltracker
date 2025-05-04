@@ -2,3 +2,12 @@
 {2, "Alt Rock"}
 {3, "Folk"}
 {4, "Indie"}
+{5, "Post-Rock"}
+{6, "Art-Rock"}
+{7, "Drone"}
+{8, "Ambient"}
+{9, "Pop"}
+{10, "Synthpop"}
+{11, "New Wave"}
+{12, "Noise Rock"}
+{13, "Experimental"}
