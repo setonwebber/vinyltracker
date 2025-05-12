@@ -11,3 +11,7 @@
 {11, "New Wave"}
 {12, "Noise Rock"}
 {13, "Experimental"}
+{14, "House"}
+{15, "IDM"}
+{16, "Electronic"}
+{17, "Downtempo"}

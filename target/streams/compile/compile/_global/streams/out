@@ -1,0 +1,13 @@
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\functions\functions.scala:4:72 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m4 |[0m    [33mdef[0m [36maskUntilValid[0m[[35mT[0m] ([36mquestion[0m: [35mString[0m) ([36mvalidate[0m: [35mString[0m => [35mOption[0m[[35mType[0m]): [35mType[0m = {[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m  |[0m                                                                        ^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m  Not found: type Type - did you mean Byte.type? or perhaps Byte or Tuple?[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\src\main\scala\functions\functions.scala:4:80 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m4 |[0m    [33mdef[0m [36maskUntilValid[0m[[35mT[0m] ([36mquestion[0m: [35mString[0m) ([36mvalidate[0m: [35mString[0m => [35mOption[0m[[35mType[0m]): [35mType[0m = {[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m  |[0m                                                                                ^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m  Not found: type Type - did you mean Byte.type? or perhaps Byte or Tuple?[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

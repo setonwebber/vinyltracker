@@ -1,3 +1,8 @@
+Scala Vinyl Tracking Software
+Developed by Seton Webber for CSP3341: Assignment 2
+
+github repo: https://github.com/setonwebber/vinyltracker
+
 The application I designed requires the Scala Build Tool (SBT).
 https://www.scala-sbt.org/
 This is unfortunately required to use packages, which is essential for multiple class applications like the one I have developed.

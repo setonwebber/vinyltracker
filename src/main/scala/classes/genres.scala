@@ -3,11 +3,11 @@ import scala.io.Source
 import scala.util.{Try, Success, Failure}
 import java.io.{File, PrintWriter}
 
-package genres {
+package vinyltracker.genres {
 
     // Genre case class represents a genre object with an ID and a name
     case class Genre(
-        val genreID: Int,
+        val genreId: Int,
         var genreName: String
     )
 
@@ -52,7 +52,7 @@ package genres {
                     // edit genre
                     case "3" =>
                         val id = readLine("Enter genre name to edit: ").trim
-                        editGenre(findGenreID(id).getOrElse(-1))
+                        editGenre(findgenreId(id).getOrElse(-1))
 
                     // back
                     case "4" =>
@@ -72,31 +72,31 @@ package genres {
             } else {
                 println("Genres:")
                 genres.foreach { g =>
-                    println(s"ID: ${g.genreID}, Name: ${g.genreName}")
+                    println(s"ID: ${g.genreId}, Name: ${g.genreName}")
                 }
             }
         }
 
         // addGenre() function creates and stores a new genre, returns its ID
         def addGenre(name: String): Int = {
-            val genreID: Int = if (genres.isEmpty) {
+            val genreId: Int = if (genres.isEmpty) {
                 1
             } else {
-                genres.map(_.genreID).max + 1
+                genres.map(_.genreId).max + 1
             }
 
             val genreName = name
-            val newGenre = Genre(genreID, genreName)
+            val newGenre = Genre(genreId, genreName)
 
             genres = genres :+ newGenre
             saveGenres()
-            return genreID
+            return genreId
         }
 
         // editGenre() function allows updating the name of an existing genre by ID
-        def editGenre(genreID: Int): Unit = {
-            // find genre attached to genreID
-            genres.find(_.genreID == genreID) match {
+        def editGenre(genreId: Int): Unit = {
+            // find genre attached to genreId
+            genres.find(_.genreId == genreId) match {
                 case Some(genre) =>
                     // if genre exists, start editing
                     val newName = readLine(s"Enter new name for genre '${genre.genreName}': ").trim
@@ -109,7 +109,7 @@ package genres {
                     }
                 case None =>
                     // if no genre is found
-                    println(s"No genre found with ID $genreID.")
+                    println(s"No genre found with ID $genreId.")
             }
         }
 
@@ -118,7 +118,7 @@ package genres {
             try {
                 val writer = new PrintWriter(file.toIO)
                 genres.foreach { g =>
-                    val genreData = s"{${g.genreID}, \"${g.genreName}\"}"
+                    val genreData = s"{${g.genreId}, \"${g.genreName}\"}"
                     writer.println(genreData)
                 }
                 writer.close()
@@ -144,9 +144,9 @@ package genres {
 
                         if (parts.length == 2) {
                             try {
-                                val genreID = parts(0).toInt
+                                val genreId = parts(0).toInt
                                 val genreName = parts(1).stripPrefix("\"").stripSuffix("\"")
-                                Some(Genre(genreID, genreName))
+                                Some(Genre(genreId, genreName))
                             } catch {
                                 case e: Exception =>
                                     println(s"Error parsing genre: ${e.getMessage}")
@@ -169,9 +169,9 @@ package genres {
             }
         }
 
-        // findGenreID() function finds a genre by name and returns its ID, if found
-        def findGenreID(name: String): Option[Int] = {
-            genres.find(_.genreName.toLowerCase() == name.toLowerCase()).map(_.genreID)
+        // findgenreId() function finds a genre by name and returns its ID, if found
+        def findgenreId(name: String): Option[Int] = {
+            genres.find(_.genreName.toLowerCase() == name.toLowerCase()).map(_.genreId)
         }
     }
 }

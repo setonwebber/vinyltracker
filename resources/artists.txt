@@ -6,3 +6,5 @@
 {6, "Tears for Fears", "unknown"}
 {7, "Swans", "unknown"}
 {8, "King Crimson", "unknown"}
+{9, "Aphex Twin", "unknown"}
+{10, "Boards Of Canada", "unknown"}

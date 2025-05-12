@@ -1,9 +1,9 @@
 import scala.io.StdIn.readLine
 
-package functions{
-    def askUntilValid[T] (question: String) (validate: String => Option[T]): T = {
+package vinyltracker.functions{
+    def askUntilValid[Type] (question: String) (validate: String => Option[Type]): Type = {
         var valid = false
-        var result: Option[T] = None
+        var result: Option[Type] = None
 
 
         while (!valid) {
@@ -21,3 +21,4 @@ package functions{
         result.get
     }
 }
+

@@ -1,0 +1,136 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(early(addDefaultCommands), None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(addDefaultCommands, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(early(initialize), None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(initialize, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(boot, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(writeSbtVersion, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reload, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtStashOnFailure, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(onFailure loadFailed, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(loadp, None, None)[0m
+[0m[[0m[0minfo[0m] [0m[0mwelcome to sbt 1.10.7 (Eclipse Adoptium Java 21.0.6)[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.defaultLoad until apply took 78.8137ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                Load.loadUnit: plugins took 47.248399ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                Load.loadUnit: defsScala took 0.1647ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Scanning directory C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project\project[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.loadUnit: mkEval took 4.1541ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Found non-root projects [0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project\project, returning: ()[0m
+[0m[[0m[0mdebug[0m] [0m[0mdeducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))[0m
+[0m[[0m[0mdebug[0m] [0m[0m  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)[0m
+[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 8.5638 ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading settings for project vinyltracker-build-build from metals.sbt...[0m
+[0m[[0m[0mdebug[0m] [0m[0m                    Load.resolveProject(vinyltracker-build-build) took 22.3665ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.loadTransitive: finalizeProject(Project(id vinyltracker-build-build, base: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project\project, plugins: List(<none>))) took 41.2136ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project\project, returning: (vinyltracker-build-build)[0m
+[0m[[0m[0mdebug[0m] [0m[0m                Load.loadUnit: loadedProjectsRaw took 219.899201ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                Load.loadUnit: cleanEvalClasses took 7.9653ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m              Load.loadUnit(file:/C:/Users/seton/OneDrive/School/FINALSEM%20LETS%20GOOOOOOOO/Programming%20Languages/Project/vinyltracker/project/project/, ...) took 278.5478ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.apply: load took 351.620801ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.apply: resolveProjects took 3.254099ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.apply: finalTransforms took 35.4148ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.apply: config.delegates took 4.157799ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.apply: Def.make(settings)... took 232.065201ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.apply: structureIndex took 52.123099ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.apply: mkStreams took 0.7266ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading project definition from C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project\project[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: plugins took 1136.5968ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: defsScala took 0.002099ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Scanning directory C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.loadUnit: mkEval took 0.1826ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Found non-root projects [0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project, returning: ()[0m
+[0m[[0m[0mdebug[0m] [0m[0mdeducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(metals.MetalsPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(org.scaladebugger.SbtJdiTools),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(metals.MetalsPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.scaladebugger.SbtJdiTools))))[0m
+[0m[[0m[0mdebug[0m] [0m[0m  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,org.scaladebugger.SbtJdiTools,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin,metals.MetalsPlugin)[0m
+[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 1.3503 ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading settings for project vinyltracker-build from metals.sbt...[0m
+[0m[[0m[0mdebug[0m] [0m[0m              Load.resolveProject(vinyltracker-build) took 3.3876ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.loadTransitive: finalizeProject(Project(id vinyltracker-build, base: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project, plugins: List(<none>))) took 5.096199ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project, returning: (vinyltracker-build)[0m
+[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: loadedProjectsRaw took 24.8279ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: cleanEvalClasses took 4.3135ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m        Load.loadUnit(file:/C:/Users/seton/OneDrive/School/FINALSEM%20LETS%20GOOOOOOOO/Programming%20Languages/Project/vinyltracker/project/, ...) took 1166.295ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: load took 1167.4454ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: resolveProjects took 0.079499ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: finalTransforms took 6.259301ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: config.delegates took 0.2462ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: Def.make(settings)... took 49.670501ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: structureIndex took 14.040501ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: mkStreams took 0.001899ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading project definition from C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\project[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: plugins took 1401.223901ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: defsScala took 0.0019ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Scanning directory C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.loadUnit: mkEval took 0.1774ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Found non-root projects [0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker, returning: ()[0m
+[0m[[0m[0mdebug[0m] [0m[0mdeducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(metals.MetalsPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(ch.epfl.scala.debugadapter.sbtplugin.DebugAdapterPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(metals.MetalsPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(ch.epfl.scala.debugadapter.sbtplugin.DebugAdapterPlugin))))[0m
+[0m[[0m[0mdebug[0m] [0m[0m  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,ch.epfl.scala.debugadapter.sbtplugin.DebugAdapterPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin,metals.MetalsPlugin)[0m
+[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 1.029101 ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading settings for project vinyltracker from build.sbt...[0m
+[0m[[0m[0mdebug[0m] [0m[0m        Load.resolveProject(vinyltracker) took 11.1686ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.loadTransitive: finalizeProject(Project(id vinyltracker, base: C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker, plugins: List(<none>))) took 12.5021ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker, returning: (vinyltracker)[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: loadedProjectsRaw took 52.6262ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: cleanEvalClasses took 10.401799ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Load.loadUnit(file:/C:/Users/seton/OneDrive/School/FINALSEM%20LETS%20GOOOOOOOO/Programming%20Languages/Project/vinyltracker/, ...) took 1465.327001ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: load took 1480.7067ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: resolveProjects took 0.119199ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: finalTransforms took 7.2702ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: config.delegates took 0.2316ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: Def.make(settings)... took 76.1816ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: structureIndex took 13.1115ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: mkStreams took 0.002599ms[0m
+[0m[[0m[0minfo[0m] [0m[0mset current project to vinyltracker (in build file:/C:/Users/seton/OneDrive/School/FINALSEM%20LETS%20GOOOOOOOO/Programming%20Languages/Project/vinyltracker/)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtPopOnFailure, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(resumeFromFailure, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(notifyUsersAboutShell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(iflast shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\seton\OneDrive\School\FINALSEM LETS GOOOOOOOO\Programming Languages\Project\vinyltracker\target\scala-3.6.3\classes ...[0m

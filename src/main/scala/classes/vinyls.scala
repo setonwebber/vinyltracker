@@ -4,21 +4,21 @@ import scala.util.{Try, Success, Failure}
 import java.io.{File, PrintWriter}
 
 // my package imports
-import functions.*
-import genres.*
-import artists.*
+import vinyltracker.functions.*
+import vinyltracker.genres.*
+import vinyltracker.artists.*
 
-package vinyls{
+package vinyltracker.vinyls{
     // Vinyl Case Class
     case class Vinyl(
-        val vinylID: Int,
+        val vinylId: Int,
         var vinylName: String,
         var vinylType: String,
         var releaseDate: String,
         var condition: String,
         var price: Float,
         var artistsIDs: List[Int],
-        var genreIDs: List[Int]
+        var genreIds: List[Int]
     )
 
     // Vinyls class acts as the manager of the vinyl case class, that organises and uses the vinyl objects saved.
@@ -84,13 +84,13 @@ package vinyls{
                     case "4" =>
                         // ask the user to enter the vinyl name of the vinyl they wish to edit and run the function with the input
                         val id = readLine("Enter vinyl name to edit: ").trim
-                        editVinyl(findVinylID(id).getOrElse(-1))
+                        editVinyl(findVinylId(id).getOrElse(-1))
 
                     // remove vinyl
                     case "5" =>
                         // ask the user to enter the vinyl name of the vinyl they wish to remove and run the function with the input
                         val id = readLine("Enter vinyl name to remove: ").trim
-                        removeVinyl(findVinylID(id).getOrElse(-1))
+                        removeVinyl(findVinylId(id).getOrElse(-1))
                     
                     // back
                     case "6" => running = false // will stop this menu from running, going back to the main.scala menu.
@@ -108,17 +108,17 @@ package vinyls{
                 var count: Int = 1
                 // display all vinyls
                 vinyls.foreach { v =>
-                    // get all artistsnames and genrenames from the artistIDs and genreIDs values
+                    // get all artistsnames and genrenames from the artistIds and genreIds values
 
                     // this function searches through each ID in the artists list (from artists.scala) to find the corresponding name attached to the same id
-                    val artistNames = v.artistsIDs.flatMap(id => artistsObject.artists.find(_.artistID == id).map(_.artistName))
+                    val artistNames = v.artistsIDs.flatMap(id => artistsObject.artists.find(_.artistId == id).map(_.artistName))
                     // this function searches through each ID in the genres list (from genres.scala) to find the corresponding name attached to the same id
-                    val genreNames = v.genreIDs.flatMap(id => genresObject.genres.find(_.genreID == id).map(_.genreName))
+                    val genreNames = v.genreIds.flatMap(id => genresObject.genres.find(_.genreId == id).map(_.genreName))
                     // some price formatter built into java that formats the prices with $ and commas, while also rounding to nearest hundreth
                     val priceFormatter = java.text.NumberFormat.getCurrencyInstance
 
                     println(s"${count}: ${v.vinylName} (${v.vinylType}) by ${artistNames.mkString(", ")} - ${v.releaseDate} (${genreNames.mkString(", ")}) | ${priceFormatter.format(v.price)} ${v.condition} ")
-                    // iterate count (vinylid is not used as its not a valid indicator of which the order of vinyls)
+                    // iterate count (vinylId is not used as its not a valid indicator of which the order of vinyls)
                     count = count + 1
                 }
             } else {
@@ -132,15 +132,15 @@ package vinyls{
                     case ("artist", query) =>
                         vinyls.filter(v => 
                             v.artistsIDs.exists(id => 
-                                artistsObject.artists.find(_.artistID == id).exists(_.artistName.toLowerCase.contains(query))
+                                artistsObject.artists.find(_.artistId == id).exists(_.artistName.toLowerCase.contains(query))
                             )
                         ) // initialises filtered as vinyls filtered
 
                     // if the searchOption is genre, filter out searchCriteria by query in each genre for each vinyl
                     case ("genre", query) =>
                         vinyls.filter(v =>
-                            v.genreIDs.exists(id =>
-                                genresObject.genres.find(_.genreID == id).exists(_.genreName.toLowerCase.contains(query))
+                            v.genreIds.exists(id =>
+                                genresObject.genres.find(_.genreId == id).exists(_.genreName.toLowerCase.contains(query))
                             )
                         ) // initialises filtered as vinyls filtered
 
@@ -178,8 +178,8 @@ package vinyls{
                     // display all vinyls again, but using filtered
                     var count: Int = 1
                     filtered.foreach { v =>
-                        val artistNames = v.artistsIDs.flatMap(id => artistsObject.artists.find(_.artistID == id).map(_.artistName))
-                        val genreNames = v.genreIDs.flatMap(id => genresObject.genres.find(_.genreID == id).map(_.genreName))
+                        val artistNames = v.artistsIDs.flatMap(id => artistsObject.artists.find(_.artistId == id).map(_.artistName))
+                        val genreNames = v.genreIds.flatMap(id => genresObject.genres.find(_.genreId == id).map(_.genreName))
                         val priceFormatter = java.text.NumberFormat.getCurrencyInstance
 
 
@@ -192,14 +192,14 @@ package vinyls{
 
         // addVinyl() function called from vinyls.menu()
         def addVinyl(): Unit = {
-            // if vinyls are empty vinylID = 1
-            val vinylID: Int = if (vinyls.isEmpty){
+            // if vinyls are empty vinylId = 1
+            val vinylId: Int = if (vinyls.isEmpty){
                 1
             } else {
-                // else vinylID = the highest vinylid in vinyls + 1
+                // else vinylId = the highest vinylId in vinyls + 1
                 // the reason i dont use the length of the vinyl class is because if some vinyl is deleted from the Vinyls, 
-                // the other vinylIDs wont update with the new ammount, meaning duplicate vinylIDs can be generated.
-                vinyls.map(_.vinylID).max + 1
+                // the other vinylIds wont update with the new ammount, meaning duplicate vinylIds can be generated.
+                vinyls.map(_.vinylId).max + 1
             }
             
             // ask the user to input each value from their vinyl, create an object with these values from the Vinyl class
@@ -271,8 +271,8 @@ package vinyls{
                         }
                     } else {
                         // artists name was entered 
-                        // use findArtistID to see if the artist already exist
-                        artistsObject.findArtistID(input) match {
+                        // use findartistId to see if the artist already exist
+                        artistsObject.findartistId(input) match {
                             case Some(id) =>
                                 // artist found in Artists, add id to id list.
                                 ids = ids :+ id
@@ -285,12 +285,12 @@ package vinyls{
                         }
                     }
                 }
-                // initalise artistIDs as ids
+                // initalise artistIds as ids
                 ids
             }
             
             // adding genres for the Vinyls, pretty much the same as artists
-            val genreIDs: List[Int] = {
+            val genreIds: List[Int] = {
                 var ids = List[Int]()
                 var running = true
 
@@ -303,7 +303,7 @@ package vinyls{
                             println("You must enter at least one genre before finishing.")
                         }
                     } else {
-                        genresObject.findGenreID(input) match {
+                        genresObject.findgenreId(input) match {
                             case Some(id) =>
                                 ids = ids :+ id
                             case None =>
@@ -313,13 +313,13 @@ package vinyls{
                         }
                     }
                 }
-                // initalise genreIDs as ids
+                // initalise genreIds as ids
                 ids
             }
 
 
             // create new Vinyl with inputted values
-            val newVinyl = Vinyl(vinylID, vinylName, vinylType, releaseDate, condition, price, artistsIDs, genreIDs)
+            val newVinyl = Vinyl(vinylId, vinylName, vinylType, releaseDate, condition, price, artistsIDs, genreIds)
             // add vinyl to vinyls list
             vinyls = vinyls :+ newVinyl
             // save vinyls to file
@@ -328,16 +328,16 @@ package vinyls{
             println("Added new vinyl: " + newVinyl.vinylName)
         }
 
-        // editVinyl() function called from vinyls.menu() takes in a vinylID value to determine which vinyl is edited.
-        def editVinyl(vinylID: Int): Unit = {
-            // find vinyl attached to vinylid
-            vinyls.find(_.vinylID == vinylID) match {
+        // editVinyl() function called from vinyls.menu() takes in a vinylId value to determine which vinyl is edited.
+        def editVinyl(vinylId: Int): Unit = {
+            // find vinyl attached to vinylId
+            vinyls.find(_.vinylId == vinylId) match {
                 case Some(vinyl) =>
                     // if vinyl exists start the editing loop
                     var editing = true
                     while (editing) {
                         println(
-                            s"Editing Vinyl ID ${vinyl.vinylID}: ${vinyl.vinylName}\n" +
+                            s"Editing Vinyl ID ${vinyl.vinylId}: ${vinyl.vinylName}\n" +
                             "What would you like to edit?\n" +
                             "1. Name\n2. Type\n3. Release Date\n4. Condition\n5. Price\n6. Add Artist\n7. Add Genre\n8. Done"
                         )
@@ -388,8 +388,8 @@ package vinyls{
                                 // ask the user for the name of an artist to add to vinyl
                                 val input = readLine("Enter artist name to add: ").trim
                                 
-                                // use findArtistID to see if the artist already exist
-                                artistsObject.findArtistID(input) match {
+                                // use findartistId to see if the artist already exist
+                                artistsObject.findartistId(input) match {
                                     case Some(id) =>
                                         if (!vinyl.artistsIDs.contains(id)) {
                                             // if artist exists and isnt on the vinyl already
@@ -411,21 +411,21 @@ package vinyls{
                                 // ask the user for the name of an genre to add to vinyl
                                 val input = readLine("Enter genre name to add: ").trim
 
-                                // use findGenreID to see if the genre already exist
-                                genresObject.findGenreID(input) match {
+                                // use findgenreId to see if the genre already exist
+                                genresObject.findgenreId(input) match {
                                     case Some(id) =>
-                                        if (!vinyl.genreIDs.contains(id)) {
+                                        if (!vinyl.genreIds.contains(id)) {
                                             // if genre exists and isnt on the vinyl already
-                                            vinyl.genreIDs :+= id
+                                            vinyl.genreIds :+= id
                                             println("Genre added.")
                                         } else {
                                             // if genre is already on the vinyl
                                             println("Genre already on vinyl.")
                                         }
                                     case None =>
-                                        // no genre exists in Genres, add new genre, add id to genreIDs list.
+                                        // no genre exists in Genres, add new genre, add id to genreIds list.
                                         val newID = genresObject.addGenre(input)
-                                        vinyl.genreIDs :+= newID
+                                        vinyl.genreIds :+= newID
                                         // println("New genre added.")
                                         println("Genre added.")
                                 }
@@ -443,14 +443,14 @@ package vinyls{
 
                 case None =>
                     // if no vinyl is found
-                    println(s"No vinyl found with ID $vinylID.")
+                    println(s"No vinyl found with ID $vinylId.")
             }
         }
 
-        // removeVinyl() function called from vinyls.menu(). takes in a vinylID value to determine which vinyl is removed.
-        def removeVinyl(vinylID: Int): Unit = {
+        // removeVinyl() function called from vinyls.menu(). takes in a vinylId value to determine which vinyl is removed.
+        def removeVinyl(vinylId: Int): Unit = {
             // find vinyl attached to id
-            vinyls.find(_.vinylID == vinylID) match {
+            vinyls.find(_.vinylId == vinylId) match {
                 case Some(v) =>
                     // if vinyl is returned, ask the user again if they want to delete the correct vinyl
                     println(s"Are you sure you want to remove '${v.vinylName}'? (y/n)")
@@ -459,7 +459,7 @@ package vinyls{
                     if (confirm == "y" || confirm == "yes") {
                         // if vinyl deletion is confirmed
                         // we have to filter the vinyls list with every vinyl excluding the one attached to the id, and revalue the vinyls list as the new list. strange way of doing it in scala
-                        vinyls = vinyls.filterNot(_.vinylID == vinylID)
+                        vinyls = vinyls.filterNot(_.vinylId == vinylId)
                         // save vinyls
                         saveVinyls()
                         println("Vinyl removed.")
@@ -468,7 +468,7 @@ package vinyls{
                         println("Remove cancelled.")
                     }
                 case None =>
-                    println(s"No vinyl found with ID $vinylID.")
+                    println(s"No vinyl found with ID $vinylId.")
             }
         }
 
@@ -481,7 +481,7 @@ package vinyls{
                 // for each vinyl, save in file in correct format
                 vinyls.foreach { v =>
                     // this format ensures that the vinyls are saved in the exact way that needs to be loaded, it does this by separating each value by commas, and lists by brackets. the entire line is encased in curly brackets
-                    val vinylData = s"{${v.vinylID}, \"${v.vinylName}\", \"${v.vinylType}\", \"${v.releaseDate}\", \"${v.condition}\", ${v.price}, [${v.artistsIDs.mkString(", ")}], [${v.genreIDs.mkString(", ")}]}"
+                    val vinylData = s"{${v.vinylId}, \"${v.vinylName}\", \"${v.vinylType}\", \"${v.releaseDate}\", \"${v.condition}\", ${v.price}, [${v.artistsIDs.mkString(", ")}], [${v.genreIds.mkString(", ")}]}"
                 
                     writer.println(vinylData)  // write vniyl data to file (at a new line) in the correct way that will be loaded with loadVinyls()
                 }
@@ -560,7 +560,7 @@ package vinyls{
                                 None
                             } else {
                                 // initalise all parts into variables to create a vinyl object
-                                val vinylID = parts(0).toInt
+                                val vinylId = parts(0).toInt
                                 val vinylName = parts(1).stripPrefix("\"").stripSuffix("\"")
                                 val vinylType = parts(2).stripPrefix("\"").stripSuffix("\"")
                                 val releaseDate = parts(3).stripPrefix("\"").stripSuffix("\"")
@@ -574,15 +574,15 @@ package vinyls{
                                     parts(6).stripPrefix("[").stripSuffix("]").split(",").map(_.trim.toInt).toList
                                 }
 
-                                val genreIDs = if (parts(7) == "[]") {
+                                val genreIds = if (parts(7) == "[]") {
                                     List() // if part indicates an empty list, create empty list
                                 } else {
-                                    // remove brackets and split each integer by comma, initalise genreIDs to list
+                                    // remove brackets and split each integer by comma, initalise genreIds to list
                                     parts(7).stripPrefix("[").stripSuffix("]").split(",").map(_.trim.toInt).toList
                                 }
                                 
                                 // attempt to make a vinyl object out of the values this adds it to the vinyls list
-                                Some(Vinyl(vinylID, vinylName, vinylType, releaseDate, condition, price, artistsIDs, genreIDs))
+                                Some(Vinyl(vinylId, vinylName, vinylType, releaseDate, condition, price, artistsIDs, genreIds))
                             }
                         } catch {
                             case e: Exception =>
@@ -610,10 +610,10 @@ package vinyls{
             }
         }
 
-        // findVinylID() function
-        def findVinylID(name: String): Option[Int] = {
-            // this will return the vinylID of the vinyl that is found with the same name as the input string.
-            vinyls.find(_.vinylName.toLowerCase() == name.toLowerCase()).map(_.vinylID)
+        // findVinylId() function
+        def findVinylId(name: String): Option[Int] = {
+            // this will return the vinylId of the vinyl that is found with the same name as the input string.
+            vinyls.find(_.vinylName.toLowerCase() == name.toLowerCase()).map(_.vinylId)
         }
     }
 }

@@ -3,3 +3,5 @@
 {5, "Songs from the Big Chair", "LP", "1985-02-25", "New", 42.99, [6], [10, 9, 11, 1]}
 {6, "To Be kind", "LP", "2014-05-03", "New", 46.48, [7], [12, 13, 7, 8]}
 {7, "In The Court Of The Crimson King", "LP", "1969-10-10", "New", 49.47, [8], [7, 13, 1, 6, 2]}
+{8, "Selected Ambient Works 85-92", "LP", "1992-11-09", "Good", 61.65, [9], [8, 14, 15, 16]}
+{9, "Trans Canada Highway", "EP", "2006-05-29", "Worn", 15.5, [10], [15, 8, 17]}

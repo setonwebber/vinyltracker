@@ -1,9 +1,11 @@
 //> using scala 3.6.3
+package vinyltracker
+
 import scala.io.StdIn.readLine
 
-import vinyls.*
-import genres.*
-import artists.*
+import vinyltracker.vinyls.*
+import vinyltracker.genres.*
+import vinyltracker.artists.*
 
 @main
 def main(): Unit = {

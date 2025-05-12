@@ -1,0 +1,255 @@
+file:///C:/Users/seton/OneDrive/School/FINALSEM%20LETS%20GOOOOOOOO/Programming%20Languages/Project/vinyltracker/src/main/scala/classes/artists.scala
+### java.lang.StringIndexOutOfBoundsException: Range [156, 8762) out of bounds for length 8757
+
+occurred in the presentation compiler.
+
+presentation compiler configuration:
+
+
+action parameters:
+offset: 156
+uri: file:///C:/Users/seton/OneDrive/School/FINALSEM%20LETS%20GOOOOOOOO/Programming%20Languages/Project/vinyltracker/src/main/scala/classes/artists.scala
+text:
+```scala
+import scala.io.StdIn.readLine
+import scala.io.Source
+import scala.util.{Try, Success, Failure}
+import java.io.{File, PrintWriter}
+
+package src.main.scala..@@artists {
+
+    // Artist case class represents a single artist with a unique ID, name, and date of birth
+    case class Artist(
+        val artistId: Int,
+        var artistName: String,
+        var artistDOB: String
+    )
+
+    // Artists class acts as the manager of the Artist case class, handles all artist-related operations
+    class Artists() {
+        // list of artist objects that will be used
+        var artists: List[Artist] = List()
+
+        // used in the save and load artists function
+        private val path: os.Path = os.pwd / "resources"
+        private var file: os.Path = path / "artists.txt"
+
+        // menu function called from main.scala, inside gives all the functionality from the artists class
+        def menu(): Unit = {
+            var running = true
+
+            while (running) {
+                // display artist menu
+                println(
+                    "\n1. View Artists" +
+                    "\n2. Add Artist" +
+                    "\n3. Edit Artist" +
+                    "\n4. Back")
+
+                // ask user for input and reach functionality if valid.
+                readLine("> ") match {
+                    // display artists
+                    case "1" =>
+                        println("Viewing artists...")
+                        displayArtists()
+
+                    // add artist
+                    case "2" =>
+                        val name = readLine("Enter artist name: ").trim
+                        if (name.nonEmpty) {
+                            val dob = readLine("Enter artist DOB (YYYY-MM-DD or 'unknown'): ").trim
+                            addArtist(name, Some(dob))
+                            println("Artist added.")
+                        } else {
+                            println("Artist name cannot be empty.")
+                        }
+
+                    // edit artist
+                    case "3" =>
+                        val id = readLine("Enter artist name to edit: ").trim
+                        editArtist(findartistId(id).getOrElse(-1))
+
+                    // back
+                    case "4" =>
+                        running = false // will stop this menu from running, going back to main.scala
+
+                    // invalid input
+                    case _ =>
+                        println("Invalid option.")
+                }
+            }
+        }
+
+        // displayArtists() function prints every artist in the list
+        def displayArtists(): Unit = {
+            if (artists.isEmpty) {
+                println("No artists available.")
+            } else {
+                println("Artists:")
+                artists.foreach { a =>
+                    println(s"ID: ${a.artistId}, Name: ${a.artistName}, DOB: ${a.artistDOB}")
+                }
+            }
+        }
+
+        // addArtist() function creates a new artist with a unique ID and saves it
+        def addArtist(name: String, dob: Option[String] = None): Int = {
+            val artistId: Int = if (artists.isEmpty) {
+                1
+            } else {
+                // artistId is set to max existing ID + 1 to avoid duplicates
+                artists.map(_.artistId).max + 1
+            }
+
+            val artistName = name
+            val artistDOB = dob.getOrElse("unknown")
+            val newArtist = Artist(artistId, artistName, artistDOB)
+
+            artists = artists :+ newArtist
+            saveArtists()
+            return artistId
+        }
+
+        // editArtist() function allows updating artist name or DOB via a selection menu, like vinyls
+        def editArtist(artistId: Int): Unit = {
+            // find artist attached to artistId
+            artists.find(_.artistId == artistId) match {
+                case Some(artist) =>
+                    // if artist exists, start editing
+                    var editing = true
+                    while (editing) {
+                        println(
+                            s"Editing Artist ID ${artist.artistId}: ${artist.artistName} (DOB: ${artist.artistDOB})\n" +
+                            "What would you like to edit?\n" +
+                            "1. Name\n2. DOB\n3. Done"
+                        )
+
+                        // ask user which field to edit
+                        readLine("> ") match {
+                            case "1" =>
+                                val newName = readLine("Enter new artist name: ").trim
+                                if (newName.nonEmpty) {
+                                    artist.artistName = newName
+                                    println("Artist name updated.")
+                                } else {
+                                    println("Name cannot be empty.")
+                                }
+
+                            case "2" =>
+                                val newDOB = readLine("Enter new artist DOB (YYYY-MM-DD or 'unknown'): ").trim
+                                if (newDOB.nonEmpty) {
+                                    artist.artistDOB = newDOB
+                                    println("Artist DOB updated.")
+                                } else {
+                                    println("DOB cannot be empty.")
+                                }
+
+                            case "3" =>
+                                // exit editing loop and save
+                                editing = false
+                                saveArtists()
+                                println("Changes saved.")
+
+                            case _ =>
+                                println("Invalid option.")
+                        }
+                    }
+
+                case None =>
+                    // if no artist is found
+                    println(s"No artist found with ID $artistId.")
+            }
+        }
+
+        // saveArtists() function writes the current artist list to the file
+        def saveArtists(): Unit = {
+            try {
+                val writer = new PrintWriter(file.toIO)
+                artists.foreach { a =>
+                    val artistData = s"{${a.artistId}, \"${a.artistName}\", \"${a.artistDOB}\"}"
+                    writer.println(artistData)
+                }
+                writer.close()
+                // println("Artists saved successfully.")
+            } catch {
+                case e: Exception => println(s"Error saving artists: ${e.getMessage}")
+            }
+        }
+
+        // loadArtists() function reads the artists from file and populates the artists list
+        def loadArtists(): Unit = {
+            // if resources folder doesn't exist, create it
+            if (!os.exists(path)) os.makeDir(path)
+
+            if (os.exists(file)) {
+                try {
+                    val source = Source.fromFile(file.toIO)
+                    val lines = source.getLines().toList
+                    source.close()
+
+                    artists = lines.flatMap { line =>
+                        val cleanedLine = line.trim.stripPrefix("{").stripSuffix("}")
+                        val parts = cleanedLine.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").map(_.trim)
+
+                        if (parts.length == 3) {
+                            try {
+                                val artistId = parts(0).toInt
+                                val artistName = parts(1).stripPrefix("\"").stripSuffix("\"")
+                                val artistDOB = parts(2).stripPrefix("\"").stripSuffix("\"")
+                                Some(Artist(artistId, artistName, artistDOB))
+                            } catch {
+                                case e: Exception =>
+                                    println(s"Error parsing artist: ${e.getMessage}")
+                                    None
+                            }
+                        } else {
+                            println(s"Invalid artist format: $line")
+                            None
+                        }
+                    }
+
+                    // println(s"Loaded ${artists.length} artists.")
+                } catch {
+                    case e: Exception =>
+                        println(s"Error loading artists: ${e.getMessage}")
+                }
+            } else {
+                // if artists.txt does not exist, create it
+                os.write(file, "")
+                println("Created new artists file.")
+            }
+        }
+
+        // findartistId() function returns the ID of an artist by name if it exists
+        def findartistId(name: String): Option[Int] = {
+            artists.find(_.artistName.toLowerCase() == name.toLowerCase()).map(_.artistId)
+        }
+    }
+}
+
+```
+
+
+
+#### Error stacktrace:
+
+```
+java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
+	java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
+	java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
+	java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
+	java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
+	java.base/jdk.internal.util.Preconditions.outOfBoundsCheckFromToIndex(Preconditions.java:112)
+	java.base/jdk.internal.util.Preconditions.checkFromToIndex(Preconditions.java:349)
+	java.base/java.lang.String.checkBoundsBeginEnd(String.java:4865)
+	java.base/java.lang.String.substring(String.java:2834)
+	dotty.tools.pc.completions.CompletionProvider.mkItem$1(CompletionProvider.scala:244)
+	dotty.tools.pc.completions.CompletionProvider.completionItems(CompletionProvider.scala:343)
+	dotty.tools.pc.completions.CompletionProvider.$anonfun$1(CompletionProvider.scala:145)
+	scala.collection.immutable.List.map(List.scala:247)
+	dotty.tools.pc.completions.CompletionProvider.completions(CompletionProvider.scala:137)
+	dotty.tools.pc.ScalaPresentationCompiler.complete$$anonfun$1(ScalaPresentationCompiler.scala:150)
+```
+#### Short summary: 
+
+java.lang.StringIndexOutOfBoundsException: Range [156, 8762) out of bounds for length 8757

@@ -3,11 +3,11 @@ import scala.io.Source
 import scala.util.{Try, Success, Failure}
 import java.io.{File, PrintWriter}
 
-package artists {
+package vinyltracker.artists {
 
     // Artist case class represents a single artist with a unique ID, name, and date of birth
     case class Artist(
-        val artistID: Int,
+        val artistId: Int,
         var artistName: String,
         var artistDOB: String
     )
@@ -54,7 +54,7 @@ package artists {
                     // edit artist
                     case "3" =>
                         val id = readLine("Enter artist name to edit: ").trim
-                        editArtist(findArtistID(id).getOrElse(-1))
+                        editArtist(findartistId(id).getOrElse(-1))
 
                     // back
                     case "4" =>
@@ -74,39 +74,39 @@ package artists {
             } else {
                 println("Artists:")
                 artists.foreach { a =>
-                    println(s"ID: ${a.artistID}, Name: ${a.artistName}, DOB: ${a.artistDOB}")
+                    println(s"ID: ${a.artistId}, Name: ${a.artistName}, DOB: ${a.artistDOB}")
                 }
             }
         }
 
         // addArtist() function creates a new artist with a unique ID and saves it
         def addArtist(name: String, dob: Option[String] = None): Int = {
-            val artistID: Int = if (artists.isEmpty) {
+            val artistId: Int = if (artists.isEmpty) {
                 1
             } else {
-                // artistID is set to max existing ID + 1 to avoid duplicates
-                artists.map(_.artistID).max + 1
+                // artistId is set to max existing ID + 1 to avoid duplicates
+                artists.map(_.artistId).max + 1
             }
 
             val artistName = name
             val artistDOB = dob.getOrElse("unknown")
-            val newArtist = Artist(artistID, artistName, artistDOB)
+            val newArtist = Artist(artistId, artistName, artistDOB)
 
             artists = artists :+ newArtist
             saveArtists()
-            return artistID
+            return artistId
         }
 
         // editArtist() function allows updating artist name or DOB via a selection menu, like vinyls
-        def editArtist(artistID: Int): Unit = {
-            // find artist attached to artistID
-            artists.find(_.artistID == artistID) match {
+        def editArtist(artistId: Int): Unit = {
+            // find artist attached to artistId
+            artists.find(_.artistId == artistId) match {
                 case Some(artist) =>
                     // if artist exists, start editing
                     var editing = true
                     while (editing) {
                         println(
-                            s"Editing Artist ID ${artist.artistID}: ${artist.artistName} (DOB: ${artist.artistDOB})\n" +
+                            s"Editing Artist ID ${artist.artistId}: ${artist.artistName} (DOB: ${artist.artistDOB})\n" +
                             "What would you like to edit?\n" +
                             "1. Name\n2. DOB\n3. Done"
                         )
@@ -144,7 +144,7 @@ package artists {
 
                 case None =>
                     // if no artist is found
-                    println(s"No artist found with ID $artistID.")
+                    println(s"No artist found with ID $artistId.")
             }
         }
 
@@ -153,7 +153,7 @@ package artists {
             try {
                 val writer = new PrintWriter(file.toIO)
                 artists.foreach { a =>
-                    val artistData = s"{${a.artistID}, \"${a.artistName}\", \"${a.artistDOB}\"}"
+                    val artistData = s"{${a.artistId}, \"${a.artistName}\", \"${a.artistDOB}\"}"
                     writer.println(artistData)
                 }
                 writer.close()
@@ -180,10 +180,10 @@ package artists {
 
                         if (parts.length == 3) {
                             try {
-                                val artistID = parts(0).toInt
+                                val artistId = parts(0).toInt
                                 val artistName = parts(1).stripPrefix("\"").stripSuffix("\"")
                                 val artistDOB = parts(2).stripPrefix("\"").stripSuffix("\"")
-                                Some(Artist(artistID, artistName, artistDOB))
+                                Some(Artist(artistId, artistName, artistDOB))
                             } catch {
                                 case e: Exception =>
                                     println(s"Error parsing artist: ${e.getMessage}")
@@ -207,9 +207,9 @@ package artists {
             }
         }
 
-        // findArtistID() function returns the ID of an artist by name if it exists
-        def findArtistID(name: String): Option[Int] = {
-            artists.find(_.artistName.toLowerCase() == name.toLowerCase()).map(_.artistID)
+        // findartistId() function returns the ID of an artist by name if it exists
+        def findartistId(name: String): Option[Int] = {
+            artists.find(_.artistName.toLowerCase() == name.toLowerCase()).map(_.artistId)
         }
     }
 }
